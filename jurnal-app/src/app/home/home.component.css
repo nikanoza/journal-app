@@ -1,0 +1,126 @@
+.box{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(39, 38, 38);
+    border-radius: 50%;
+    position: absolute;
+}
+
+.auth{
+    position: relative;
+    width: 64rem;
+    height: 32rem;
+    border: 1px solid rgb(56, 45, 45);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.group{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    color: #5e4320;
+    font-size: 1.5em;
+}
+
+.group input{
+    margin-top: 5px;
+    width: 20rem;
+    height: 2rem;
+    border-radius: 5px;
+    outline: none;
+    padding: 2px;
+}
+
+.group input:focus{
+    border: 1px solid skyblue;
+}
+
+.group input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+
+span{
+    margin-top: 10px;
+    color: rgb(122, 61, 61);
+}
+
+.login-button{
+    margin-top: 10px;
+    height: 2rem;
+    outline: none;
+    border: none;
+    background: green;
+    color: #fff;
+    cursor: pointer;
+}
+
+img{
+    margin-top: 5px;
+    max-width: 100px;
+    height: auto;
+}
+
+.img1{
+    top:20%;
+}
+
+.img2{
+    top: 40%;
+}
+
+.img3{
+    top: 60%;
+}
+
+.img4{
+    top: 80%;
+}
+
+
+.img1, .img3 {
+    animation: animate1 20s infinite;
+}
+
+.img2, .img4{
+    animation: animate2 20s infinite;
+}
+
+@keyframes animate1{
+    0%{
+        left: 50%;
+    }
+    30%{
+        left: 0;
+    }
+    80%{
+        left: 90%;
+    }
+    100%{
+        transform: rotate(-360deg);
+        left: 50%;
+    }
+}
+
+@keyframes animate2{
+    0%{
+        left: 50%;
+    }
+    30%{
+        left: 90%;
+    }
+    80%{
+        left: 0;
+    }
+    100%{
+        transform: rotate(-360deg);
+        left: 50%;
+    }
+}
