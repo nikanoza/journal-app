@@ -5,12 +5,3 @@
     flex-direction: column;
 }
 
-.page{
-    height: 100%;
-    width: 100%;
-    background: #adadad;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}

@@ -1,34 +1,37 @@
-<div class="box img1">
-    <img src="https://ondwn.com/wp-content/uploads/2019/09/angular-logo.png">
+<div class="home-page">
+    <div class="box img1">
+        <img src="https://ondwn.com/wp-content/uploads/2019/09/angular-logo.png">
+    </div>
+    
+    <div class="box img2">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png">
+    </div>
+    
+    <div class="box img3">
+        <img src="https://fedojo.com/wp-content/uploads/2019/03/logo-javascript-png-html-code-allows-to-embed-javascript-logo-in-your-website-587.png">
+    </div>
+    
+    <div class="box img4">
+        <img src="https://www.dotcom-monitor.com/blog/wp-content/uploads/sites/3/2020/05/Vue-logo-1.png">
+    </div>
+    
+    <div class="auth">
+        <form (ngSubmit)="onSubmit()" [formGroup]="login">
+            <div class="group">
+                <label for="username">Username: </label>
+                <input type="text" id="username" formControlName="username">
+            </div>
+            <span *ngIf="!login.get('username')?.valid && login.get('username')?.touched">Please enter valid username *</span>
+            <div class="group">
+                <label for="password">Password: </label>
+                <input type="password" id="password" formControlName="password">
+            </div>
+            <span *ngIf="!login.get('password')?.valid && login.get('password')?.touched">Please enter valid password *</span>
+            <div class="group">
+                <button type="submit" class="login-button">LOGIN</button>
+            </div>
+        </form>
+    </div>
 </div>
 
-<div class="box img2">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png">
-</div>
-
-<div class="box img3">
-    <img src="https://fedojo.com/wp-content/uploads/2019/03/logo-javascript-png-html-code-allows-to-embed-javascript-logo-in-your-website-587.png">
-</div>
-
-<div class="box img4">
-    <img src="https://www.dotcom-monitor.com/blog/wp-content/uploads/sites/3/2020/05/Vue-logo-1.png">
-</div>
-
-<div class="auth">
-    <form (ngSubmit)="onSubmit()" [formGroup]="login">
-        <div class="group">
-            <label for="username">Username: </label>
-            <input type="text" id="username" formControlName="username">
-        </div>
-        <span *ngIf="!login.get('username')?.valid && login.get('username')?.touched">Please enter valid username *</span>
-        <div class="group">
-            <label for="password">Password: </label>
-            <input type="password" id="password" formControlName="password">
-        </div>
-        <span *ngIf="!login.get('password')?.valid && login.get('password')?.touched">Please enter valid password *</span>
-        <div class="group">
-            <button type="submit" class="login-button">LOGIN</button>
-        </div>
-    </form>
-</div>
 

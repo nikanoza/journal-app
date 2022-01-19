@@ -1,0 +1,14 @@
+.marks{
+    width: 70vw;
+    height: 100%;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+}
+
+.controls{
+    width: 90%;
+    height: 100px;
+    background: #D7C49EFF;
+    align-self: flex-end;
+}
