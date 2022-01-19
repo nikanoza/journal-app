@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -30,6 +31,7 @@ const appRoutes = [
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    FontAwesomeModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

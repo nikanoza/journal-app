@@ -1,5 +1,5 @@
-import { templateJitUrl } from '@angular/compiler';
 import { Component } from '@angular/core';
+import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: 'app-marks',
@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
 })
 
 export class MarksComponent {
-    
+    faPlus = faPlusCircle;
+
 }
