@@ -1,0 +1,29 @@
+<div class="marks">
+    <div class="controls">
+        <button class="button">
+            Add Student
+            <fa-icon [icon]="faPlus"></fa-icon>
+        </button>
+        <button class="button">
+            Add Day
+            <fa-icon [icon]="faPlus"></fa-icon>
+        </button>
+        <button class="button">
+            Remove Day
+            <fa-icon [icon]="faTrash"></fa-icon>
+        </button>
+    </div>
+
+    <div class="marks-table">
+        <div class="student" *ngFor="let student of students">
+            <div class="box edit">
+                <fa-icon [icon]="faEdit"></fa-icon>
+            </div>
+            <div class="box">{{ student.name }}</div>
+            <div class="box">{{ student.average }}</div>
+            <div class="box" *ngFor="let mark of student.marks; let i = index">
+                <input type="number">
+            </div>
+        </div>
+    </div>
+</div>
