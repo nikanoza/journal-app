@@ -55,7 +55,48 @@
     width: 90%;
     min-height: 600px;
     margin-top: 50px;
+    padding: 20px;
     align-self: center;
     justify-self: center;
     background: rgb(39, 39, 39);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
+
+.box{
+    background: #fff;
+    padding: 12px 24px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+}
+
+.edit{
+    color: #a229ff;
+}
+
+.student{
+    background: #D7C49EFF;
+}
+
+.average{
+    background: #D7C49EFF;
+}
+
+.box.days{
+    
+}
+
+.mark{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+

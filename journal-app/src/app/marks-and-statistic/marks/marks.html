@@ -15,14 +15,26 @@
     </div>
 
     <div class="marks-table">
-        <div class="student" *ngFor="let student of students">
-            <div class="box edit">
+        <div class="box-edit">
+            <div class="box edit" *ngFor="let edit of students" title="edit student">
                 <fa-icon [icon]="faEdit"></fa-icon>
             </div>
-            <div class="box">{{ student.name }}</div>
-            <div class="box">{{ student.average }}</div>
-            <div class="box" *ngFor="let mark of student.marks; let i = index">
-                <input type="number">
+        </div>
+        <div class="sudent-name">
+            <div class="box student" *ngFor="let student of students">
+                {{ student.name }}
+            </div>
+        </div>
+        <div class="sudent-average">
+            <div class="box average" *ngFor="let student of students">
+                {{ student.average.toFixed(2) }}
+            </div>
+        </div>
+        <div class="sudent-marks">
+            <div class="box days" *ngFor="let student of students">
+                <div class="mark" *ngFor="let mark of student.marks">
+                    
+                </div>
             </div>
         </div>
     </div>
