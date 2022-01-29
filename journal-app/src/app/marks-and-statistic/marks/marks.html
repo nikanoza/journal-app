@@ -4,37 +4,60 @@
             Add Student
             <fa-icon [icon]="faPlus"></fa-icon>
         </button>
-        <button class="button">
+        <button class="button" (click)="onAddDay()">
             Add Day
             <fa-icon [icon]="faPlus"></fa-icon>
         </button>
-        <button class="button">
+        <button class="button" (click)="onRemoveDay()">
             Remove Day
             <fa-icon [icon]="faTrash"></fa-icon>
+        </button>
+        <button class="button">
+            Save Changes
+            <fa-icon [icon]="faCloudUploadAlt"></fa-icon>
         </button>
     </div>
 
     <div class="marks-table">
-        <div class="box-edit">
-            <div class="box edit" *ngFor="let edit of students" title="edit student">
+        <div class="student">
+            <div class="box edit">
+                Edit
+            </div>
+            <div class="box name">
+                Student Name
+            </div>
+            <div class="box average">
+                Average Mark
+            </div> 
+            <div class="day" *ngFor="let day of students[0].marks">
+                <div class="mark">
+                    <div class="box">
+                        {{ day.date }}
+                    </div>
+                </div>
+            </div>   
+        </div>
+
+        <div class="student" *ngFor="let student of students">
+            <div class="box edit">
                 <fa-icon [icon]="faEdit"></fa-icon>
             </div>
-        </div>
-        <div class="sudent-name">
-            <div class="box student" *ngFor="let student of students">
+            <div class="box name">
                 {{ student.name }}
             </div>
-        </div>
-        <div class="sudent-average">
-            <div class="box average" *ngFor="let student of students">
+            <div class="box average">
                 {{ student.average.toFixed(2) }}
             </div>
-        </div>
-        <div class="sudent-marks">
-            <div class="box days" *ngFor="let student of students">
-                <div class="mark" *ngFor="let mark of student.marks">
-                    
-                </div>
+            <div class="mark" *ngFor="let mark of student.marks">
+                    <div class="box">
+                        <div class="change-score up">
+                            <fa-icon [icon]="faSortUp"></fa-icon>
+                        </div>
+                        {{ mark.mark }}
+                        <div class="change-score down">
+                            <fa-icon [icon]="faSortUp"></fa-icon>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>

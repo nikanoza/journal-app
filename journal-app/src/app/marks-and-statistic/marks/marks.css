@@ -74,29 +74,48 @@
     height: 45px;
 }
 
-.edit{
-    color: #a229ff;
+.marks-table{
+    display: flex;
+    flex-direction: column;
 }
 
 .student{
-    background: #D7C49EFF;
+    display: flex;
 }
 
-.average{
-    background: #D7C49EFF;
-}
-
-.box.days{
-    
-}
-
-.mark{
-    padding: 0;
+.box{
+    padding: 5px 10px;
+    margin: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.edit{
+    color: #a229ff;
+    width: 50px;
+}
 
+.name{
+    background: #D7C49EFF;
+    width: 200px;
+}
 
+.average{
+    width: 120px;
+    background: #D7C49EFF;
+}
 
+.mark{
+    width: 100px;
+}
+
+.change-score{
+    color: #a229ff;
+    margin: 12px;
+    font-size: 1.8em;
+}
+
+.down{
+    transform: rotateX(180deg);
+}
