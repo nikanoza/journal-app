@@ -10,13 +10,15 @@ import { MarksAndStatisticComponent } from './marks-and-statistic/marks-and-stat
 import { MarksComponent } from './marks-and-statistic/marks/marks';
 import { StatisticComponent } from './marks-and-statistic/statistic/statistic';
 import { MenuComponent } from './menu/menu.component';
+import { EditStudentComponent } from './student-edit/student-edit';
 
 const appRoutes = [
   {path: '', pathMatch: 'prefix', redirectTo: 'home'},
   {path: 'home', component: HomeComponent},
   {path: 'marks', component: MarksAndStatisticComponent},
   {path: 'books', component: HomeComponent},
-  {path: 'help', component: HomeComponent}
+  {path: 'help', component: HomeComponent},
+  {path: 'edit/:id', component: EditStudentComponent }
 ];
 
 @NgModule({
@@ -26,7 +28,8 @@ const appRoutes = [
     MenuComponent,
     MarksAndStatisticComponent,
     StatisticComponent,
-    MarksComponent
+    MarksComponent,
+    EditStudentComponent
   ],
   imports: [
     BrowserModule,

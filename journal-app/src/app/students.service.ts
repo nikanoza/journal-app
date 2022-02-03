@@ -30,7 +30,7 @@ export class StudentService{
         marks: [
             {date:'4/10/2020', mark:10},
         ], 
-        average: 3},
+        average: 10},
         {name: 'Beso Kvaracxelia', 
         age:16, 
         marks: [

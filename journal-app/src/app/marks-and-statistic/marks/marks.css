@@ -36,7 +36,7 @@
 .button fa-icon{
     margin-left: 5px;
     font-size: 1.5em;
-    color: #a229ff;
+    color: #034efc;
 }
 
 .button:hover {
@@ -53,7 +53,7 @@
 
 .marks-table{
     width: 90%;
-    min-height: 600px;
+    height: 600px;
     margin-top: 50px;
     padding: 20px;
     align-self: center;
@@ -62,6 +62,8 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    overflow-x: auto;
+    overflow-y: auto;
 }
 
 .box{
@@ -92,8 +94,9 @@
 }
 
 .edit{
-    color: #a229ff;
+    color: #034efc;
     width: 50px;
+    cursor: pointer;
 }
 
 .name{
@@ -111,9 +114,10 @@
 }
 
 .change-score{
-    color: #a229ff;
+    color: #034efc;
     margin: 12px;
     font-size: 1.8em;
+    cursor: pointer;
 }
 
 .down{

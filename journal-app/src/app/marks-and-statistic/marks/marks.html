@@ -38,8 +38,8 @@
             </div>   
         </div>
 
-        <div class="student" *ngFor="let student of students">
-            <div class="box edit">
+        <div class="student" *ngFor="let student of students; let studentIndex = index">
+            <div class="box edit" (click)="onEdit(studentIndex)">
                 <fa-icon [icon]="faEdit"></fa-icon>
             </div>
             <div class="box name">
@@ -48,13 +48,13 @@
             <div class="box average">
                 {{ student.average.toFixed(2) }}
             </div>
-            <div class="mark" *ngFor="let mark of student.marks">
-                    <div class="box">
-                        <div class="change-score up">
+            <div class="mark" *ngFor="let mark of student.marks; let markIndex = index">
+                    <div class="box" title="{{ mark.date }} - {{student.name}}">
+                        <div class="change-score up" (click)="increase(studentIndex, markIndex)">
                             <fa-icon [icon]="faSortUp"></fa-icon>
                         </div>
                         {{ mark.mark }}
-                        <div class="change-score down">
+                        <div class="change-score down" (click)="decrease(studentIndex, markIndex)">
                             <fa-icon [icon]="faSortUp"></fa-icon>
                         </div>
                     </div>

@@ -1,0 +1,26 @@
+<div class="edit-page">
+        <form>
+            <div class="input-group">
+                <label for="name">Student Name: </label>
+                <input type="text" id="name">
+            </div>
+            <div class="input-group">
+                <label for="age">Student Age: </label>
+                <input type="number" id="age" min="15">
+            </div>
+            <div class="buttons-group">
+                <button type="button" class="back">
+                    <fa-icon [icon]="faArrowLeft"></fa-icon>
+                    Back
+                </button>
+                <button type="button" class="remove">
+                    Delete Student
+                    <fa-icon [icon]="faUserMinus"></fa-icon>
+                </button>
+                <button type="submit" class="save">
+                    Save Changes
+                    <fa-icon [icon]="faSave"></fa-icon>
+                </button>
+            </div>
+        </form>
+</div>
