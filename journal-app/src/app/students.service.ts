@@ -1,4 +1,7 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { map } from 'rxjs/operators';
+
 import { Student } from "./student.model";
 
 @Injectable({
@@ -6,55 +9,28 @@ import { Student } from "./student.model";
 })
 
 export class StudentService{
-    students: Student[] = [
-        {name: 'Nugo Bibilashvili', 
-        age:22, 
-        marks: [
-            {date:'4/10/2020', mark:3},
-        ], 
-        average: 3},
-        {name: 'Marexi Xidjakadze', 
-        age:54, 
-        marks: [
-            {date:'4/10/2020', mark:5},
-        ], 
-        average: 5},
-        {name: 'Nini Kurtanidze', 
-        age:16, 
-        marks: [
-            {date:'4/10/2020', mark:3},
-        ], 
-        average: 3},
-        {name: 'Salome Nozadze', 
-        age:29, 
-        marks: [
-            {date:'4/10/2020', mark:10},
-        ], 
-        average: 10},
-        {name: 'Beso Kvaracxelia', 
-        age:16, 
-        marks: [
-            {date:'4/10/2020', mark:5},
-        ], 
-        average: 5},
-        {name: 'Gela Chakhaia', 
-        age:25, 
-        marks: [
-            {date:'4/10/2020', mark:8},
-        ], 
-        average: 8},
-        {name: 'Severian Chivchivadze', 
-        age:43, 
-        marks: [
-            {date:'4/10/2020', mark:2},
-        ], 
-        average: 2},
-        {name: 'Nika Nozadze', 
-        age:27, 
-        marks: [
-            {date:'4/10/2020', mark:7},
-        ], 
-        average: 7},
-    ];
+    constructor(private http: HttpClient){}
+
+    onPostStudentsData(data: Student){
+        this.http.post('https://journal-app-1c400-default-rtdb.firebaseio.com/students.json', data)
+        .subscribe(
+            response => console.log(response)
+        );
+    }
+
+    onGetStudentsData(){
+       return this.http.get<{[key: string]: Student}>('https://journal-app-1c400-default-rtdb.firebaseio.com/students.json')
+        .pipe(map( requestData => {
+            const values = Object.values(requestData);
+            const keys = Object.keys(requestData);
+            const studentsArr: Student[] = [];
+            for(let i = 0; i < values.length; i++){
+                studentsArr.push({...values[i], id: keys[i]});
+            }
+
+            return studentsArr;
+        }));
+    }
+
 }
 

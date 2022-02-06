@@ -18,13 +18,23 @@ export class MarksComponent implements OnInit{
     faCloudUploadAlt = faCloudUploadAlt;
 
     students: Student[] = [];
+    fetchStudentsData = false;
 
     constructor( private studentService: StudentService,
                  private router: Router){}
     
 
-    ngOnInit(): void {
-        this.students = this.studentService.students;
+    ngOnInit(){
+       this.fetchStudents();
+    }
+
+    fetchStudents(){
+        this.fetchStudentsData = true;
+        this.studentService.onGetStudentsData()
+        .subscribe( data => {
+            this.fetchStudentsData = false;
+            this.students = data
+        });
     }
 
     onAddDay(){
@@ -53,7 +63,6 @@ export class MarksComponent implements OnInit{
             });
             this.students[i].average = this.calculateStudentAverage(i);
         }
-        
     }
 
     onRemoveDay(){
@@ -64,9 +73,10 @@ export class MarksComponent implements OnInit{
     }
 
     calculateStudentAverage(studentIndex: number){
-        return this.students[studentIndex].marks.reduce(
-            (p,c) => p + c.mark, 0
-        ) / this.students[studentIndex].marks.length;
+        let average = this.students[studentIndex].marks.reduce(
+            (p,c) => p + c.mark, 0) / this.students[studentIndex].marks.length;
+
+        return average ? average : 0;
     }
     
     increase(studentIndex:number, dayIndex:number){
@@ -87,5 +97,9 @@ export class MarksComponent implements OnInit{
 
     onEdit(id: number){
         this.router.navigate(['edit', id]);
+    }
+
+    onAddStudent(){
+        this.router.navigate(['new']);
     }
 }

@@ -12,8 +12,6 @@ export class StatisticComponent implements OnInit{
 
     students: Student[] = [];
 
-    marks = [3,5,3,3,5,8,2,7];
-
     totalDays: number = 0;
     totalMissed: number = 0;
     totalStudents: number = 0;
@@ -24,11 +22,14 @@ export class StatisticComponent implements OnInit{
     }
 
     ngOnInit(){
-        this.students = this.studentService.students;
-        this.totalDays = this.students[0].marks.length;
-        this.totalMissed = this.countMissed();
-        this.totalStudents = this.students.length;
-        this.averageMarks = this.calculateTotalAverage();
+        this.studentService.onGetStudentsData()
+        .subscribe( data => {
+            this.students = data;
+            this.totalDays = this.students[0].marks.length;
+            this.totalMissed = this.countMissed();
+            this.totalStudents = this.students.length;
+            this.averageMarks = this.calculateTotalAverage();
+        });
     }
 
     countMissed(){

@@ -1,0 +1,80 @@
+.edit-page{
+    width: 100%;
+    height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+form{
+    width: 40%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label{
+    font-size: 1.5em;
+}
+
+.input-group input{
+    width: 100%;
+    height: 30px;
+    outline: none;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.input-group input[type="number"]{
+    width: 40%;
+}
+
+.buttons-group{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.buttons-group button{
+    padding: 10px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.back{
+    border: 1px solid blue;
+    color: blue;
+}
+
+.back:hover{
+    background: blue;
+    color: #fff;
+}
+
+.remove{
+    border: 1px solid red;
+    color: red;
+}
+
+.remove:hover{
+    background: red;
+    color: #fff;
+}
+
+.save{
+    border: 1px solid green;
+    color: green;
+}
+
+.save:hover{
+    background: green;
+    color: #fff;
+}

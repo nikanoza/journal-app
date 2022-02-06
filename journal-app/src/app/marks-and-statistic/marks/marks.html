@@ -1,6 +1,6 @@
 <div class="marks">
     <div class="controls">
-        <button class="button">
+        <button class="button" (click)="onAddStudent()">
             Add Student
             <fa-icon [icon]="faPlus"></fa-icon>
         </button>
@@ -18,7 +18,7 @@
         </button>
     </div>
 
-    <div class="marks-table">
+    <div class="marks-table" *ngIf="students.length > 0 && !fetchStudentsData">
         <div class="student">
             <div class="box edit">
                 Edit

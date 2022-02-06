@@ -1,19 +1,19 @@
 <div class="edit-page">
-        <form>
+        <form [formGroup]="student" (onSubmit)="onSaveChanges()" *ngIf="students.length > 0 && !fetchData">
             <div class="input-group">
                 <label for="name">Student Name: </label>
-                <input type="text" id="name">
+                <input type="text" id="name" formControlName="studentName">
             </div>
             <div class="input-group">
                 <label for="age">Student Age: </label>
-                <input type="number" id="age" min="15">
+                <input type="number" id="age" min="15" formControlName="studentAge">
             </div>
             <div class="buttons-group">
-                <button type="button" class="back">
+                <button type="button" class="back" (click)="goBack()">
                     <fa-icon [icon]="faArrowLeft"></fa-icon>
                     Back
                 </button>
-                <button type="button" class="remove">
+                <button type="button" class="remove" (click)="onRemoveStudent()">
                     Delete Student
                     <fa-icon [icon]="faUserMinus"></fa-icon>
                 </button>
