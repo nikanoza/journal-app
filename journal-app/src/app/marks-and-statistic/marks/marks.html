@@ -12,10 +12,17 @@
             Remove Day
             <fa-icon [icon]="faTrash"></fa-icon>
         </button>
-        <button class="button">
+        <button class="button" (click)="onUpdateStudentsData()">
             Save Changes
             <fa-icon [icon]="faCloudUploadAlt"></fa-icon>
         </button>
+    </div>
+
+    <div class="search">
+            <form [formGroup]="search">
+                <input type="text" formControlName="search">
+            </form>
+            <fa-icon [icon]="faSearch"></fa-icon>
     </div>
 
     <div class="marks-table" *ngIf="students.length > 0 && !fetchStudentsData">
@@ -38,7 +45,7 @@
             </div>   
         </div>
 
-        <div class="student" *ngFor="let student of students; let studentIndex = index">
+        <div class="student" *ngFor="let student of students | filter: search.get('search')?.value; let studentIndex = index">
             <div class="box edit" (click)="onEdit(studentIndex)">
                 <fa-icon [icon]="faEdit"></fa-icon>
             </div>

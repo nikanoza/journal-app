@@ -54,16 +54,16 @@
 .marks-table{
     width: 90%;
     height: 600px;
-    margin-top: 50px;
+    margin-top: 10px;
     padding: 20px;
     align-self: center;
     justify-self: center;
     background: rgb(39, 39, 39);
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    overflow-x: auto;
-    overflow-y: auto;
+    overflow: auto;
 }
 
 .box{
@@ -74,11 +74,6 @@
     justify-content: center;
     align-items: center;
     height: 45px;
-}
-
-.marks-table{
-    display: flex;
-    flex-direction: column;
 }
 
 .student{
@@ -122,4 +117,30 @@
 
 .down{
     transform: rotateX(180deg);
+}
+
+.search{
+    margin-top: 15px;
+    width: 90%;
+    height: 45px;
+    background: rgb(39, 39, 39);
+    padding-left: 10px;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 5px;
+}
+
+.search input{
+    height: 60%;
+    width: 200px;
+    outline: none;
+    padding: 2px;
+    font-size: 18px;
+}
+
+.search fa-icon{
+    color: #034efc;
 }

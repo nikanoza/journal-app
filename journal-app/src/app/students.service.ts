@@ -11,21 +11,17 @@ import { Student } from "./student.model";
 export class StudentService{
     constructor(private http: HttpClient){}
 
-    onPostStudentsData(data: Student){
-        this.http.post('https://journal-app-1c400-default-rtdb.firebaseio.com/students.json', data)
-        .subscribe(
-            response => console.log(response)
-        );
+    onPostStudentsData(students: Student[]){
+        return this.http.put('https://journal-app-1c400-default-rtdb.firebaseio.com/students.json', students);
     }
 
     onGetStudentsData(){
        return this.http.get<{[key: string]: Student}>('https://journal-app-1c400-default-rtdb.firebaseio.com/students.json')
         .pipe(map( requestData => {
             const values = Object.values(requestData);
-            const keys = Object.keys(requestData);
             const studentsArr: Student[] = [];
             for(let i = 0; i < values.length; i++){
-                studentsArr.push({...values[i], id: keys[i]});
+                studentsArr.push({...values[i]});
             }
 
             return studentsArr;

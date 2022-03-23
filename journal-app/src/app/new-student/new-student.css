@@ -78,3 +78,8 @@ form{
     background: green;
     color: #fff;
 }
+
+.error{
+    color: red;
+    font-style: italic;
+}

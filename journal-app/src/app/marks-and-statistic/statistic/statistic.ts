@@ -43,5 +43,4 @@ export class StatisticComponent implements OnInit{
     calculateTotalAverage(){
         return this.students.reduce( (p,c) => p + c.average, 0)/this.students.length;
     }
-
 }

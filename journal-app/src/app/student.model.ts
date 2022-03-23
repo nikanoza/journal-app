@@ -1,6 +1,6 @@
 export interface Student{
     name: string,
-    id: string,
+    id: number,
     age: number,
     marks: {date: string, mark: number}[],
     average: number

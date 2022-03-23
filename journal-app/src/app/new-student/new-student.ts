@@ -27,8 +27,14 @@ export class NewStudentComponent {
     ngOnInit(): void {
         this.student = new FormGroup({
             'studentName': new FormControl(null, Validators.required),
-            'studentAge': new FormControl(null, Validators.required)
-        })
+            'studentAge': new FormControl(null, [Validators.required])
+        });
+        this.studentService.onGetStudentsData().subscribe(
+            (data) => this.students = data ,
+            (error) => {
+
+            }
+        );
     }
 
     goBack(){
@@ -36,6 +42,24 @@ export class NewStudentComponent {
     }
 
     onSaveChanges(){
-        
+        if(this.student.valid){
+            let marks = this.students[0].marks.map(mark => { return {...mark, mark: 0}});
+            this.students.push({
+                name: this.student.get('studentName')?.value,
+                age: this.student.get('studentAge')?.value,
+                id: Math.round(Math.random() * 100000000),
+                average: 0, 
+                marks
+            });
+            
+            this.studentService.onPostStudentsData(this.students).subscribe(
+                request => {
+                    this.goBack();
+                },
+                error => {
+                    
+                } 
+            );
+        }
     }
 }

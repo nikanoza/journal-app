@@ -14,6 +14,9 @@ import { StatisticComponent } from './marks-and-statistic/statistic/statistic';
 import { MenuComponent } from './menu/menu.component';
 import { NewStudentComponent } from './new-student/new-student';
 import { EditStudentComponent } from './student-edit/student-edit';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { ShorterPipe } from './shorter.pipe';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { EditStudentComponent } from './student-edit/student-edit';
     StatisticComponent,
     MarksComponent,
     EditStudentComponent,
-    NewStudentComponent
+    NewStudentComponent,
+    ErrorPageComponent,
+    ShorterPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

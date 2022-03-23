@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { faPlusCircle, faTrashAlt, faEdit, faSortUp, faCloudUploadAlt} from '@fortawesome/free-solid-svg-icons';
+import { faPlusCircle, faTrashAlt, faEdit, faSortUp, faCloudUploadAlt, faSearch} from '@fortawesome/free-solid-svg-icons';
 import { Student } from 'src/app/student.model';
 import { StudentService } from 'src/app/students.service';
 
@@ -16,9 +17,11 @@ export class MarksComponent implements OnInit{
     faEdit = faEdit;
     faSortUp = faSortUp;
     faCloudUploadAlt = faCloudUploadAlt;
+    faSearch = faSearch;
 
     students: Student[] = [];
     fetchStudentsData = false;
+    search!: FormGroup;
 
     constructor( private studentService: StudentService,
                  private router: Router){}
@@ -26,6 +29,9 @@ export class MarksComponent implements OnInit{
 
     ngOnInit(){
        this.fetchStudents();
+       this.search = new FormGroup({
+           'search': new FormControl('')
+       });
     }
 
     fetchStudents(){
@@ -102,4 +108,12 @@ export class MarksComponent implements OnInit{
     onAddStudent(){
         this.router.navigate(['new']);
     }
+
+    onUpdateStudentsData(){
+        this.studentService.onPostStudentsData(this.students)
+       .subscribe(
+           data => console.log(data)
+       );
+    }
+
 }
